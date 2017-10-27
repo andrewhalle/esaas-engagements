@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # route /apps/:app_id/engagements/:engagement_id
   resources :apps do
     resources :engagements, :except => :index
+    resources :comments, :only => [:create, :edit, :show, :update, :destroy]
   end
   # route /engagements/:engagement_id/iterations/:iteration_id
   resources :engagements, :only => [] do # don't route engagements by themselves
@@ -23,4 +24,7 @@ Rails.application.routes.draw do
   post 'feedback/:engagement_id/:iteration_id' => 'pending_feedback#process_response', :as => 'feedback_process_response'
   post 'search' => 'search#search', :as => 'search'
   get 'results' => 'search#results', :as => 'results'
+  
+  get 'creation' => 'creation#new', :as => 'creation'
+  post 'creation' => 'creation#create', :as => 'create_all'
 end

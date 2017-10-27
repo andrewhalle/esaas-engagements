@@ -5,11 +5,13 @@ Fox, is to do continuous tracking over time of customer apps developed
 by the "ESaaS ecosystem" around [UC Berkeley CS169 Software
 Engineering](https://cs169.saas-class.org).
 
-[![Build Status](https://travis-ci.org/andrewhalle/esaas-engagements.svg?branch=master)](https://travis-ci.org/saasbook/esaas-engagements)
-[![Code Climate](https://img.shields.io/codeclimate/github/andrewhalle/esaas-engagements.svg?style=flat-square)](https://codeclimate.com/github/andrewhalle/esaas-engagements)
-[![Test Coverage](https://codeclimate.com/github/andrewhalle/esaas-engagements/badges/coverage.svg)](https://codeclimate.com/github/andrewhalle/esaas-engagements/coverage)
+[![Build Status](https://travis-ci.org/csungwon/esaas-engagements.svg?branch=master)](https://travis-ci.org/csungwon/esaas-engagements)
+[![Code Climate](https://codeclimate.com/github/csungwon/esaas-engagements/badges/gpa.svg)](https://codeclimate.com/github/csungwon/esaas-engagements)
+[![Test Coverage](https://codeclimate.com/github/csungwon/esaas-engagements/badges/coverage.svg)](https://codeclimate.com/github/csungwon/esaas-engagements/coverage)
 
 [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2070245)
+
+Heroku Link: https://shielded-bastion-61752.herokuapp.com/
 
 The data currently populating the app came from this [Google spreadsheet](https://docs.google.com/spreadsheets/d/1FnllGoYuUjhdF1xF1kQRIrWrv_znxqokSq84-uNw8wY/edit#gid=0).
 
@@ -43,7 +45,7 @@ developer(s) to work on an app.  During that time, the app is in
 After the engagement ends, the app is either in `maintenance` status
 (customer is using it; app may be enhanced in future) or `inactive`
 (customer not using it, because it doesn't meet their needs enough to be
-usable). 
+usable).
 
 At any given time every app is always part of an engagement, so
 engagements have a start date but no end date; an engagement ends when
@@ -93,10 +95,10 @@ The file `db/github_mock_login.yml` contains the attributes for a fake
 user that you can login-as for development work.  You will always be
 logged in as the user whose info appears in this file.  **Important:**
 You must have run `rake db:seed` to create the fake orgs, apps, and this
-user. 
+user.
 
 The file `config/application.yml.asc` is an encrypted version of the
-file containing the GitHub application key and secret for OmniAuth. 
+file containing the GitHub application key and secret for OmniAuth.
 You shouldn't need to change it, but if you do, get the encryption key
 from @armandofox so that you can decrypt, modify, then re-encrypt and
 commit `application.yml.asc`.
