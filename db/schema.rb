@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103070821) do
+ActiveRecord::Schema.define(version: 20171103202652) do
 
   create_table "apps", force: :cascade do |t|
     t.integer  "org_id"
@@ -38,6 +38,11 @@ ActiveRecord::Schema.define(version: 20171103070821) do
   end
 
   add_index "comments", ["app_id"], name: "index_comments_on_app_id"
+
+  create_table "developers_engagements", id: false, force: :cascade do |t|
+    t.integer "developer_id",  null: false
+    t.integer "engagement_id", null: false
+  end
 
   create_table "engagements", force: :cascade do |t|
     t.integer  "app_id"
@@ -114,8 +119,12 @@ ActiveRecord::Schema.define(version: 20171103070821) do
     t.datetime "updated_at"
     t.string   "preferred_contact"
     t.string   "sid"
-    t.string   "typeA"
     t.string   "type_user"
+    t.integer  "engagement_id"
+    t.integer  "engagements_id"
   end
+
+  add_index "users", ["engagement_id"], name: "index_users_on_engagement_id"
+  add_index "users", ["engagements_id"], name: "index_users_on_engagements_id"
 
 end

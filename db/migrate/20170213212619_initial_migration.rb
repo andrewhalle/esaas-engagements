@@ -50,8 +50,6 @@ class InitialMigration < ActiveRecord::Migration
 
       t.timestamps
       
-      t.has_one :member1, :index => true,  :references => 'users'
-      
     end
 
     
