@@ -18,5 +18,16 @@ class Engagement < ActiveRecord::Base
 
   has_many :iterations
   
+  has_one :member1, :class_name => 'User'
+  has_one :member2, :class_name => 'User'
+  has_one :member3, :class_name => 'User'
+  has_one :member4, :class_name => 'User'
+  has_one :member5, :class_name => 'User'
+  has_one :member6, :class_name => 'User'
+  
+  validates_presence_of :member1_id
+  validates_associated :member1
+       
+  
   default_scope { order('start_date DESC') }
 end

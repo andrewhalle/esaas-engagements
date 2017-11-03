@@ -49,6 +49,9 @@ class InitialMigration < ActiveRecord::Migration
       t.string :student_names
 
       t.timestamps
+      
+      t.has_one :member1, :index => true,  :references => 'users'
+      
     end
 
     

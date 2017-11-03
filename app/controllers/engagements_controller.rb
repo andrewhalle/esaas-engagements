@@ -59,6 +59,8 @@ class EngagementsController < ApplicationController
     params.require(:engagement).
       permit(:coach_id, :coaching_org_id, :contact_id, :app_id, :team_number,
       :start_date, :screencast_url, :poster_preview_url, :poster_url,
-      :presentation_url, :prototype_deployment_url, :student_names, :repository_url)
+      :presentation_url, :prototype_deployment_url, :student_names, 
+      :repository_url, :member1_id, :member2_id, :member3_id, :member4_id, :member5_id, :member6_id)
   end
+  
 end

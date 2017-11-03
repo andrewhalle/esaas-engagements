@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171021062049) do
+ActiveRecord::Schema.define(version: 20171103070821) do
 
   create_table "apps", force: :cascade do |t|
     t.integer  "org_id"
@@ -55,12 +55,24 @@ ActiveRecord::Schema.define(version: 20171021062049) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "repository_url"
+    t.integer  "member1_id"
+    t.integer  "member2_id"
+    t.integer  "member3_id"
+    t.integer  "member4_id"
+    t.integer  "member5_id"
+    t.integer  "member6_id"
   end
 
   add_index "engagements", ["app_id"], name: "index_engagements_on_app_id"
   add_index "engagements", ["coach_id"], name: "index_engagements_on_coach_id"
   add_index "engagements", ["coaching_org_id"], name: "index_engagements_on_coaching_org_id"
   add_index "engagements", ["contact_id"], name: "index_engagements_on_contact_id"
+  add_index "engagements", ["member1_id"], name: "index_engagements_on_member1_id"
+  add_index "engagements", ["member2_id"], name: "index_engagements_on_member2_id"
+  add_index "engagements", ["member3_id"], name: "index_engagements_on_member3_id"
+  add_index "engagements", ["member4_id"], name: "index_engagements_on_member4_id"
+  add_index "engagements", ["member5_id"], name: "index_engagements_on_member5_id"
+  add_index "engagements", ["member6_id"], name: "index_engagements_on_member6_id"
 
   create_table "iterations", force: :cascade do |t|
     t.integer  "engagement_id"
@@ -101,6 +113,9 @@ ActiveRecord::Schema.define(version: 20171021062049) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "preferred_contact"
+    t.string   "sid"
+    t.string   "typeA"
+    t.string   "type_user"
   end
 
 end

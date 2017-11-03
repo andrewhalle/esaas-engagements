@@ -17,10 +17,10 @@ Background: Logged in
         | org3 | 1          |
 
     And the following users exist:
-        | name  | github_uid      | email         | type     | SID    |
-        | user1 | esaas_developer | test@user.com | Staff    |        |
-        | user2 |                 | test@user.com | Student  | 1      |
-        | user3 |                 | test@user.com | Student  | 2      |
+        | name  | github_uid      | email         | 
+        | user1 | esaas_developer | test@user.com | 
+        | user2 |                 | test@user.com | 
+        | user3 |                 | test@user.com | 
 
 
     And I'm logged in on the orgs page
@@ -28,10 +28,10 @@ Background: Logged in
     
 Scenario: Can create a User with a type student or staff on new users form:
     Given I follow "app1"
-    And I press "New&hellip;"
-    Then I should see "Member 1"
-    And I should see "Member 2"
-    And I should see "Member 3"
-    And I should see "Member 4"
-    And I should see "Member 5"
-    And I should see "Member 6"
+    And I create a new engagement for "app1"
+    Then I should see "Member1"
+    And I should see "Member2"
+    And I should see "Member3"
+    And I should see "Member4"
+    And I should see "Member5"
+    And I should see "Member6"
