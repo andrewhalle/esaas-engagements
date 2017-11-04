@@ -14,7 +14,7 @@
       <img src="./assets/0.10.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-04T04:24:18+00:00">2017-11-04T04:24:18+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-04T04:50:26+00:00">2017-11-04T04:50:26+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -353,7 +353,7 @@
       <tr>
         <td class="strong"><a href="#9d3bd64e700d68d0892f4570a94ccdf1fee8538e" class="src_link" title="features/step_definitions/eng_users.rb">features/step_definitions/eng_users.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>29</td>
+        <td>22</td>
         <td>13</td>
         <td>13</td>
         <td>0</td>
@@ -4777,13 +4777,13 @@
         <li class="covered" data-hits="3" data-linenumber="2">
           <span class="hits">3</span>
           
-          <code class="ruby">   app_id = App.find_by_name(&quot;#{app_name}&quot;).id</code>
+          <code class="ruby">  app_id = App.find_by_name(&quot;#{app_name}&quot;).id</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="3">
           <span class="hits">3</span>
           
-          <code class="ruby">   visit new_app_engagement_path(app_id)</code>
+          <code class="ruby">  visit new_app_engagement_path(app_id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
@@ -4801,142 +4801,100 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">When /^I fill in the fields as follows:$/ do |table|</code>
+          <code class="ruby">When /^I fill in the engagement fields as follows:$/ do |table|</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="7">
           <span class="hits">2</span>
           
-          <code class="ruby">table.hashes.each do |t|</code>
+          <code class="ruby">  table.hashes.each do |t|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="covered" data-hits="4" data-linenumber="8">
+          <span class="hits">4</span>
           
-          
-          <code class="ruby">#   if &quot;#{t[:field]}&quot; == &quot;Type of user&quot;</code>
+          <code class="ruby">    steps %Q{When I fill in &quot;#{t[:field]}&quot; with &quot;#{t[:value]}&quot;}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">#      select &quot;#{t[:value]}&quot; , :from =&gt; &quot;user[type_user]&quot;</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">#   elsif &quot;#{t[:field]}&quot; == &quot;Team members&quot;</code>
+          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">#       select &quot;#{t[:value]}&quot; , :from =&gt; &quot;engagment[user_ids]&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby">#   else</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="13">
-          <span class="hits">4</span>
-          
-          <code class="ruby">     steps %Q{When I fill in &quot;#{t[:field]}&quot; with &quot;#{t[:value]}&quot;}</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby">#   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby"> end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">Given /^I select &quot;(.*)&quot; as Team members$/ do |all_names|</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="19">
+        <li class="covered" data-hits="4" data-linenumber="13">
           <span class="hits">4</span>
           
           <code class="ruby">  members = all_names.to_s.split(&#39; &#39;)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="20">
+        <li class="covered" data-hits="4" data-linenumber="14">
           <span class="hits">4</span>
           
           <code class="ruby">  selection = page.find(:select, &#39;engagement_user_ids&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="21">
+        <li class="covered" data-hits="4" data-linenumber="15">
           <span class="hits">4</span>
           
           <code class="ruby">  members.each do |member|</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="22">
+        <li class="covered" data-hits="12" data-linenumber="16">
           <span class="hits">12</span>
           
           <code class="ruby">      selection.select member</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">Given /^I want to edit the engagement for &quot;(.*)&quot;$/ do |team|</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">   find(&#39;tr&#39;, text: team.to_s).click_link(&#39;Edit&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">#   page.find(:button, &#39;Edit&#39;).click</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">end</code>

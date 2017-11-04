@@ -40,7 +40,7 @@ Scenario: Can create an engagement with Team members
    #Story ID: #152298585
    Given I follow "app1"
    And I create a new engagement for "app1"
-   When I fill in the fields as follows:
+   When I fill in the engagement fields as follows:
        | field                  | value      |
        | Team number            | Team1      |
        | Student names          | Student1   |
@@ -53,7 +53,7 @@ Scenario: Can update an engagement's team mumbers
    #Story ID: #152298585
    Given I follow "app1"
    And I create a new engagement for "app1"
-   When I fill in the fields as follows:
+   When I fill in the engagement fields as follows:
        | field                  | value      |
        | Team number            | Team1      |
        | Student names          | Student1   |
@@ -61,7 +61,7 @@ Scenario: Can update an engagement's team mumbers
    And I press "Save"
    Then I should see "Engagement was successfully created."
    And I want to edit the engagement for "Team1"
-   Then I should see "Editing Engagement"
+   Then I should see "Editing Engagement for app1"
    And I select "user1 user2 user4" as Team members
    And I press "Save"
    Then I should see "Engagement was successfully updated."
