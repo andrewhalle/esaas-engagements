@@ -68,9 +68,3 @@
         %td= link_to image_tag('video.png'), engagement.screencast_url, :target => '_blank'
         %td= link_to image_tag('presentation.png'), engagement.presentation_url, :target => '_blank'
         %td= link_to('Edit', edit_app_engagement_path(@app,engagement), :class => 'btn btn-primary') if indx==0
-
-        // <div class="member2">#{engagement.users[1].try(:name)}</div>
-        // <div class="member2">#{engagement.users[2].try(:name)}</div>
-        // <div class="member2">#{engagement.users[3].try(:name)}</div>
-        // <div class="member2">#{engagement.users[4].try(:name)}</div>
-        // <div class="member2">#{engagement.users[5].try(:name)}</div>
